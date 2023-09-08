@@ -7,6 +7,10 @@ import AddTask from "../Pages/Main/AddTask/AddTask";
 import Profile from "../../SharedFolder/Profile/Profile";
 import EditProfile from "../../SharedFolder/Profile/EditProfile/EditProfile";
 import TasksDetail from "../Pages/Main/TasksDetail/TasksDetail";
+import Dashboard from "../Layout/Dashboard/Dashboard";
+import DashboardInfo from "../Pages/Dashboard/DashboardInfo/DashboardInfo";
+import DashboardTasks from "../Pages/Dashboard/DashboardTasks/DashboardTasks";
+import DashboardUsers from "../Pages/Dashboard/DashboardUsers/DashboardUsers";
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +47,24 @@ const routes = createBrowserRouter([
       }
     ]
 
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: '/dashboard',
+        element: <DashboardInfo />
+      },
+      {
+        path: '/dashboard/tasks',
+        element: <DashboardTasks />
+      },
+      {
+        path: '/dashboard/users',
+        element: <DashboardUsers />
+      },
+    ]
   }
 ]);
 

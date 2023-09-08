@@ -26,8 +26,8 @@ const FilterTask = () => {
     <div >
       <div>
         <h1>Status</h1>
-        {status.map((data) => (
-          <div
+        {status.map((data,i) => (
+          <div key={i}
             onChange={() => dispatch(sendFilterData(data))}
             className="flex items-center mt-2"
           >
@@ -38,8 +38,8 @@ const FilterTask = () => {
       </div>
       <div className="mt-8">
         <h1>Priority Level</h1>
-        {priority.map((data) => (
-          <div
+        {priority.map((data,i) => (
+          <div key={i}
             onChange={() => dispatch(sendFilterData(data))}
             className="flex items-center mt-2"
           >

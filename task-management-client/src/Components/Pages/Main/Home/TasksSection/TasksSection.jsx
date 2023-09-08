@@ -22,13 +22,13 @@ const TasksSection = () => {
         {filterTask.length <= 0 ? (
           <div className="grid grid-cols-3 gap-10">
             {tasks.map((task) => (
-              <TaskSection task={task} />
+              <TaskSection key={task?._id} task={task} />
             ))}
           </div>
         ) : (
           <div className="grid grid-cols-3 gap-10">
             {filterTask.map((task) => (
-              <TaskSection task={task} />
+              <TaskSection key={task?._id} task={task} />
             ))}
           </div>
         )}
